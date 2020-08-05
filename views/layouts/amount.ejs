@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %>
+<!--<div class="container pt-5">-->
+<!--    <div class="row">-->
+<!--        <div class="col">-->
+<!--            <p>-->
+<!--                <h3>Welcome <%= username %></h3>-->
+<!--                <h4 >Would you like to withdraw money?</h4>-->
+<!--                <h4 >Please Enter the amount you would like to withdraw</h4>-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <form action="/denomination" method="post">-->
+<!--                <input type="number" min="0" max="10000" name="drawamount" placeholder="Enter Amount to Withdraw">-->
+<!--                <input type="hidden" name="username" value="<%= username %>">-->
+<!--                <button type="submit">Enter</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="jumbotron text-center">
+    <h1 class="display-3"><%= viewTitle%></h1>
+    <p class="card">
+        <p>Welcome <%= username %></p>
+    <p >Would you like to withdraw money?</p>
+    <p >Please Enter the amount you would like to withdraw</p>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <form action="/denomination" method="post">
+                    <input type="number" class="form-control" min="0" max="10000" name="drawamount" placeholder="Enter Amount to Withdraw">
+                    <input type="hidden" name="username" value="<%= username %>">
+                    <button type="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Enter</button>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    </div>
+<%- include('../includes/end.ejs') %>
+

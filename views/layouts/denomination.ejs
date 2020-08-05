@@ -1,0 +1,69 @@
+<%- include('../includes/head.ejs') %>\
+<!--<div class="container pt-5">-->
+<!--    <div class="row">-->
+<!--        <div class="col">-->
+<!--            <p>-->
+<!--            <h4><%= username %></h4>-->
+<!--            <h4 >Would you like to withdraw money?</h4>-->
+<!--            <h4 >Please Enter the amount you would like to Withdraw</h4>-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--            <form method="post">-->
+<!--                <input type="hidden" name="username" value="<%= username %>">-->
+<!--                <input type="hidden" name="drawamount" value="<%= drawamount %>">-->
+<!--                <button type="submit" class="btn btn-primary btn-lg" formaction="/withden">with Denomiation</button>-->
+<!--                <button type="submit" class="btn btn-primary btn-lg" formaction="/withoutden">without Denomiation</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="jumbotron text-center">
+    <h1 class="display-3"><%= viewTitle%></h1>
+    <p class="card">
+    <p>Welcome <%= username %></p>
+    <p >Would you like to withdraw money?</p>
+    <p >Please Enter the Method</p>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <form method="post">
+                    <input type="hidden" name="username" value="<%= username %>">
+                    <input type="hidden" name="drawamount" value="<%= drawamount %>">
+                    <input type="number" name="denomamount"  id="message"   placeholder="Enter Value In case of denomination" class="form-control">
+                    <button type="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" formaction="/withoutden" >without Denomiation</button>
+                    <button type="submit" id="sendButton" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" formaction="/withden" >with Denomiation</button>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+
+        var checkField;
+
+        checkField = $("input#message").val().length;
+
+        var enableDisableButton = function(){
+            if(checkField > 0){
+                $('#sendButton').removeAttr("disabled");
+            }
+            else {
+                $('#sendButton').attr("disabled","disabled");
+            }
+        }
+
+        enableDisableButton();
+
+        $('input#message').keyup(function(){
+            checkField = $("input#message").val().length;
+            enableDisableButton();
+        });
+    });
+</script>
+<%- include('../includes/end.ejs') %>
+

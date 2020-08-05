@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+<div class="jumbotron text-center">
+    <h1 class="display-3"><%= viewTitle%></h1>
+    <p>Fill Your Details</p>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <form class="text-center" style="color: #757575;" action="/data" method="post">
+
+                    <div class="md-form">
+                        <input type="text" id="materialLoginFormEmail" class="form-control" name="name" placeholder="Enter Name Please">
+                        <label for="materialLoginFormEmail">Name</label>
+                    </div>
+
+                    <div class="md-form">
+                        <input type="number" min="0" max="1000000" id="materialLoginFormEmail" class="form-control" name="amount" placeholder="Enter Amount Please">
+                        <label for="materialLoginFormEmail">Amount</label>
+                    </div>
+
+                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Submit</button>
+
+                    <p>
+                        <a href="/">Home</a>
+                    </p>
+
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
+<%- include('../includes/head.ejs') %>
+
+
