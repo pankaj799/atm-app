@@ -85,8 +85,8 @@ exports.postwithoutden=(req, res, next) => {
             }
             if(active.length === 0) {
                 for (let i = 0; i < notes.length; i++) {
-                    let val1 = (Math.floor(calnotes / notes[i]));
-                    active.push([notes[i], val1]);
+                    let numberOfnotes = (Math.floor(calnotes / notes[i]));
+                    active.push([notes[i], numberOfnotes]);
                     calnotes = calnotes % notes[i];
                 }
                 let amountleft = result.amount - drawamount;
@@ -112,12 +112,12 @@ exports.postwithoutden=(req, res, next) => {
 
 exports.postwithden=(req, res, next) => {
     const denomamount= req.body.denomamount;
-    const notes1 = [];
+    const EditArrayList = [];
     for(let i=0;i<notes.length;i++)
     {
         if(notes[i]<=denomamount)
         {
-            notes1.push(notes[i]);
+            EditArrayList.push(notes[i]);
         }
     }
     const drawamount = req.body.drawamount;
@@ -130,11 +130,11 @@ exports.postwithden=(req, res, next) => {
             }
             if(active.length === 0)
             {
-                for(let i=0;i<notes1.length;i++)
+                for(let i=0;i<EditArrayList.length;i++)
                 {
-                    let val1= (Math.floor(calnotes/notes1[i]));
-                    active.push([notes1[i],val1]);
-                    calnotes = calnotes%notes1[i];
+                    let numberOfnotes= (Math.floor(calnotes/EditArrayList[i]));
+                    active.push([EditArrayList[i],numberOfnotes]);
+                    calnotes = calnotes%EditArrayList[i];
                     // console.table(active);
                 }
                 const amountleft = result.amount - drawamount;

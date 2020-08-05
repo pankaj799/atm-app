@@ -5,7 +5,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 
-const MONGODB_URI = "mongodb+srv://Pankaj:Pankaj@cluster0-nfzmo.mongodb.net/atm?retryWrites=true&w=majority";
+const MONGODB_URI = "mongodb://localhost:27017/ATM";
 
 app.set('view engine', 'ejs');
 app.set('views','views');
